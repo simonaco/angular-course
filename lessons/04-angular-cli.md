@@ -33,6 +33,12 @@ Add a third pardy dependency on `@angular/cdk`
 
 ### Creating application features via the `@angular/cli`
 
+Components are usually used for describing the parts of your UI. It is a common practice 
+and it is based on atomic design. Most frameworks and libraries will use this method to construct 
+UIs in a composable and more reusable manner. You could for example build a component library 
+I am sure you are familiar with `bootstrap` or `material`. They also have variants for integrating 
+with most popular frameworks like Angular and React.
+
 To create a new component:
 
 `npx ng generate component <component path>` or `npx ng g c <component path>`
