@@ -1,14 +1,15 @@
 ---
-path: "/angular-components"
-title: "Angular Components"
-order: 4
+path: "/angular-components-ii"
+title: "Angular Components (part II)"
+order: 5
 ---
 
-
-## Angular Components
+## Angular Components (part II)
 
 Components provide us with a way to build reusable UI interfaces. Most modern frameworks and libraries have 
 this approach to building UIs.
+In the previous chapter we started building some basic Angular features using the `@angular/cli`. This is useful 
+for training the reflex of reaching out to the tools that the framework provides. As they say _"Always use the right tool for the job"_
 
 In this chapter we will build a search component that will allow us to filter the books array based on the 
 title.
@@ -189,3 +190,4 @@ This should get us to a stage where we can perform a search on the books list ba
 
 1) Create a shared model for a book and use it in the specific components
 2) Make the search perform be case insensitive
+

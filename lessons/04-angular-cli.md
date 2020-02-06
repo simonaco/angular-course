@@ -44,7 +44,7 @@ Create a new angular project:
 `npx ng new ng-goodreads --enable-ivy`
 
 
-### And of course like any command line tool it allows you to combine the options
+#### And of course like any command line tool it allows you to combine the options
 
 A common set of command line flags that you may use could look something like this:
 
@@ -53,10 +53,10 @@ A common set of command line flags that you may use could look something like th
 Something nice about the `@angular/cli` is that it also comes with an interactive prompt that lets you set 
 some of the options
 
-## 2 Other cool and useful features
-## provided by the `@angular/cli` are the `build` and `serve` commands
+### 2 Other cool and useful features
+### provided by the `@angular/cli` are the `build` and `serve` commands
 
-### 1) `npx ng build` - docs [here](https://angular.io/cli/build)
+#### 1) `npx ng build` - docs [here](https://angular.io/cli/build)
 
 - Mode flag
 
@@ -77,8 +77,25 @@ some of the options
 `npx ng build --statsJson`
 
 
-### 2) `npx ng serve` - runs your app in dev mode with hot reloading
+#### 2) `npx ng serve` - runs your app in dev mode with hot reloading
 
+You can set the various options that you would expect from any type of server application
+
+- `--port`: allows you tospecify the port on which the app is served
+
+- `--proxyConfig`: you can specify a proxy configuration file which can enable you to run the app against 
+a custom version of the backend
+
+- `--ssl`: you can serve this using HTTPS in order to have things more reflective of a prod environment for example
+
+- `--sslCert`: specify the cert file for your HTTPS served app
+
+- `--prod`: to serve using prod bundling
+
+- other custom options that are specified in the [docs](https://angular.io/cli/serve)
+
+
+### We want to add material because we will be using it to help make the application pretty
 
 Add a third party dependency on `@angular/material`
 
@@ -88,30 +105,10 @@ Add a third pardy dependency on `@angular/cdk`
 
 `npx ng add @angular/cdk`
 
-### Creating application features via the `@angular/cli`
 
-Components are usually used for describing the parts of your UI. It is a common practice 
-and it is based on atomic design. Most frameworks and libraries will use this method to construct 
-UIs in a composable and more reusable manner. You could for example build a component library 
-I am sure you are familiar with `bootstrap` or `material`. They also have variants for integrating 
-with most popular frameworks like Angular and React.
+### Individual exercises:
 
-To create a new component:
+1) build the app generated via `npx ng new ng-goodreads` and analyze the bundles
 
-`npx ng generate component <component path>` or `npx ng g c <component path>`
+2) set up `json-server` and create a proxy configuration for serving from `books.json`
 
-To create a new service:
-
-`npx ng generate service <service path>` or `npx ng g s <service path>`
-
-To create a new directive:
-
-`npx ng generate directive <directive path>` or `npx ng g d <directive path>`
-
-To create a new module:
-
-`npx ng generate module <module path>` or `npx ng g m <module path>`
-
-#### Example 🌶️
-
-`npx ng g c books` will generate a component in `src/app/books`. __Note__ that the component is nested in `app` so you don't need to specify the full path, `app/` is prefixed automatically
