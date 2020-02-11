@@ -39,9 +39,10 @@ Create a new angular project:
 
 `npx ng new ng-goodreads --prefix books`
 
-5) 💫 NEW in Angular 8+ 💫 . Angular 8 allows you to use the last generation rendering engine **_IVY_**
+5) 💫 NEW in Angular 8+ 💫 . Angular 8 allows you to use the last generation rendering engine **_IVY_**. It is the default in Angular 9.
 
-`npx ng new ng-goodreads --enable-ivy`
+`npx ng new ng-goodreads --enable-ivy` - Angular 8
+`npx ng new ng-goodreads` - Angular 9
 
 
 #### And of course like any command line tool it allows you to combine the options

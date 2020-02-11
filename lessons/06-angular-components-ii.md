@@ -108,8 +108,6 @@ tweak the `tsconfig.json` to allow you to directly import json files.
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
-+    "resolveJsonModule": true,
-+    "allowSyntheticDefaultImports": true,
     "typeRoots": [
       "node_modules/@types"
     ],
@@ -128,7 +126,6 @@ tweak the `tsconfig.json` to allow you to directly import json files.
 The `app-root` component will become this:
 ```javascript
 import { Component } from '@angular/core';
-import data from './books.json'
 
 @Component({
   selector: 'app-root',
@@ -138,7 +135,7 @@ import data from './books.json'
 export class AppComponent {
   title = 'ng-goodreads';
   searchTerm: string = '';
-  books: Array<any> = data["books"];
+  books: Array<any> = {...};
 
   constructor() {}
 
