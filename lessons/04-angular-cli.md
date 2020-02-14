@@ -109,7 +109,7 @@ Add a third pardy dependency on `@angular/cdk`
 
 ### Individual exercises:
 
-1) build the app generated via `npx ng new ng-goodreads` and analyze the bundles
+1) build the app generated via `npx ng build` and analyze the bundles
 
-2) set up `json-server` and create a proxy configuration for serving from `books.json`
+2) set up `json-server` and create a server configuration for serving from `books.json` on localhost:4242
 

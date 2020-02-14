@@ -4,6 +4,8 @@ title: "Angular Components (part II)"
 order: 5
 ---
 
+<iframe src="https://docs.google.com/presentation/d/1LsQ5ePWNPFR6nvXh4VhqYpUPMUkaQC0wMwEo0Pyl1no/embed?start=false&loop=false&delayms=30000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
 ## Angular Components (part II)
 
 Components provide us with a way to build reusable UI interfaces. Most modern frameworks and libraries have 
@@ -35,6 +37,7 @@ The content of the component should look be able to manage input from the search
 ```javascript
   @Output() searchSubmitted = new EventEmitter<{ searchTerm: string }>()
   searchTerm: string = '';
+  books: Array<any> = [<array of books copy pasted from server/books.json>]
 
   constructor() { }
 
@@ -89,38 +92,6 @@ import { MatButtonModule } from '@angular/material/button';
   </mat-form-field>
   <button mat-raised-button color="primary" class="submit-btn" (click)="onSearch()">Search</button>
 </div>
-```
-
-The main component class of the application `app-root` will host the books data array. For now we will 
-import the `books.json` in the component. We can notice that this will not work out of the box but we have to 
-tweak the `tsconfig.json` to allow you to directly import json files.
-```json
-{
-  "compileOnSave": false,
-  "compilerOptions": {
-    "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
-    "sourceMap": true,
-    "declaration": false,
-    "downlevelIteration": true,
-    "experimentalDecorators": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "importHelpers": true,
-    "target": "es2015",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2018",
-      "dom"
-    ]
-  },
-  "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
-  }
-}
 ```
 
 The `app-root` component will become this:
@@ -185,6 +156,8 @@ This should get us to a stage where we can perform a search on the books list ba
 
 ### Individual Exercises
 
-1) Create a shared model for a book and use it in the specific components
-2) Make the search perform be case insensitive
+1) Add `ngStyle` or `ngClass` to the search box to align the button and make it bigger
+2) Add a typescript model for book objects under `src/app/shared/book.model.ts`
+3) Create a shared model for a book and use it in the specific components
+4) Make the search perform be case insensitive
 

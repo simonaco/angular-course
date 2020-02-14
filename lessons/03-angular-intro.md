@@ -198,8 +198,9 @@ const { XMLHttpRequest } = require('xmlhttprequest')
 
 function* urlGenerator() {
   let idx = 0
+  const urls = [<list_of_urls>];
   while(true) {
-    yield `http://localhost:4242/books?_page=${idx}&_limit=10`
+    yield urls[idx];
     idx += 1;
   }
 }
