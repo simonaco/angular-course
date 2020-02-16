@@ -12,11 +12,11 @@ In this workshop we'll learn how to build a website using Angular
 
 1. VS Code [here](https://code.visualstudio.com/download/)
 
-1. VS Code extension for React development [here](https://marketplace.visualstudio.com/items?itemName=burkeholland.react-food-truck&WT.mc_id=react-workshop-github-sicotin)
-
-1. Angular Augury developer tool for Chrome [here](https://chrome.google.com/webstore/detail/augury)
+1. Angular Essentials VS Code extensions [here](https://marketplace.visualstudio.com/items?itemName=johnpapa.angular-essentials&wt.mc_id=devto-blog-jopapa)
 
 1. JSON server for quick REST APIs [here](https://github.com/typicode/json-server)
+
+1. Deployed course [here](https://trusting-wiles-ad8ef7.netlify.com)
 
 ## Steps
 
