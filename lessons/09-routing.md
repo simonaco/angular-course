@@ -1,0 +1,95 @@
+---
+path: "/angular-routing"
+title: "Angular Routing"
+order: 8
+---
+
+<iframe src="https://docs.google.com/presentation/d/1S0oeGdqfWH1t5h-3kF7fG3PL4Ys3zqoDgNEk4F4Ei78/embed?start=false&loop=false&delayms=30000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+Until now we have used a single page to display the data, but now we also want to introduce
+a form for editing (TBD), so we want to move the main page into its own component and use the
+app component as an app shell instead.
+
+## First step
+We want to move the main parts we have been working with so far into a listing component which we will call `books`
+We should generate the component using our friendly `@angular/cli`
+
+`npx ng g c books`
+
+Once done we can move the markup that deals with rendering the book table to the `books.component.html`
+
+```html
+<app-search-box (searchFired)="doSearch($event)"></app-search-box>
+<app-book-table
+  [books]="(books | filterSearch: searchTitle)"
+  (editFired)="doEdit($event)"
+  (deleteFired)="doDelete($event)"
+  (addFired)="doAdd()"
+>
+</app-book-table>
+```
+
+At the same time we want to move the functionality from the original component class, the event handlers and the lifecycle methods
+
+```javascript
+export class BooksComponent implements OnInit {
+  searchTitle: string = '';
+  books: Book[] = [];
+
+  constructor(private bookService: BookService) { }
+
+  getBooks() {
+    this.bookService
+      .fetchBooks()
+      .subscribe((books) => {
+        this.books = books;
+      })
+  }
+
+  ngOnInit(): void {
+    this.getBooks()
+  }
+
+  doSearch(search: Search) {
+    this.searchTitle = search.searchTerm;
+  }
+
+  doAdd() {
+    console.log('Adding book');
+  }
+
+  doDelete(bookId: string) {
+    console.log(bookId);
+    this.bookService
+      .deleteBook(bookId)
+      .subscribe(data => {
+        this.getBooks();
+      })
+  }
+
+  doEdit(bookId: string) {
+    console.log(bookId);
+  }
+}
+```
+
+Afterwards we should probably fix the imports to get them working
+
+## Second step
+
+Add the mapping to the new component in your `app-routing.module.ts`
+
+```javascript
+const routes: Routes = [
+  { path: "", redirectTo: "books", pathMatch: "full" },
+  { path: "books", component: BooksComponent },
+];
+```
+
+## Third step
+Move the `<router-outlet></router-outlet>` where the old component used to be in order to inherit the same
+styles you had on your old component. Like we said earlier the main app component will be more of an app shell,
+or app wrapper that gives us the theme that is uniform across the application.
+
+## Individual tasks:
+1) Create a Not Found component and wire up the routing in the routing module
