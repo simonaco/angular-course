@@ -93,3 +93,7 @@ or app wrapper that gives us the theme that is uniform across the application.
 
 ## Individual tasks:
 1) Create a Not Found component and wire up the routing in the routing module
+2) Because we have two routes pointing to the same resource we will get unexpected navigation results. For example when navigating to `/books` we
+will get the `books.json` from the api. This is not what we intended so we want to fix it. What I would recommend is that you create a prefix on the
+api routes using the `--routes` param in the `json-server` package ([hint](https://github.com/typicode/json-server#add-custom-routes)). This is another
+symptom of the difference between SPA routing and server side routing.
