@@ -112,7 +112,7 @@ help you create very interesting functionalities in your UI.
 
 ### Eg: Long click  handler
 
-```javacript
+```javascript
 import { fromEvent, of } from 'rxjs';
 import { mergeMap, delay, takeUntil } from 'rxjs/operators';
 
