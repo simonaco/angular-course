@@ -122,6 +122,7 @@ We will generate this component in a shared folder as pipes should be reusable
 `npx ng g pipe shared/search`
 
 The pipe should look something like this:
+
 ```javascript
 import { Pipe, PipeTransform } from '@angular/core';
 
@@ -157,7 +158,6 @@ This should get us to a stage where we can perform a search on the books list ba
 ### Individual Exercises
 
 1) Add `ngStyle` or `ngClass` to the search box to align the button and make it bigger
-2) Add a typescript model for book objects under `src/app/shared/book.model.ts`
-3) Create a shared model for a book and use it in the specific components
-4) Make the search perform be case insensitive
+2) Add a typescript model for book objects under `src/app/shared/book.model.ts` and use it in the components
+3) Make the search perform be case insensitive
 
