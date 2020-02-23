@@ -1,7 +1,7 @@
 ---
 path: "/angular-routing"
 title: "Angular Routing"
-order: 8
+order: 9
 ---
 
 <iframe src="https://docs.google.com/presentation/d/1S0oeGdqfWH1t5h-3kF7fG3PL4Ys3zqoDgNEk4F4Ei78/embed?start=false&loop=false&delayms=30000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>

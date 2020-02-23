@@ -1,7 +1,7 @@
 ---
 path: "/angular-components-ii"
 title: "Angular Components (part II)"
-order: 5
+order: 6
 ---
 
 <iframe src="https://docs.google.com/presentation/d/1LsQ5ePWNPFR6nvXh4VhqYpUPMUkaQC0wMwEo0Pyl1no/embed?start=false&loop=false&delayms=30000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
