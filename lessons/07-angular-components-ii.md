@@ -35,28 +35,34 @@ lecture we will be using angular material throughout for building our components
 
 The content of the component should look be able to manage input from the search box.
 ```javascript
-  @Output() searchSubmitted = new EventEmitter<{ searchTerm: string }>()
+...
+import { Search } from '../shared/search.model'; // we implemented a Search type for the search box
+
+@Component({
+  selector: 'app-search-box',
+  templateUrl: './search-box.component.html',
+  styleUrls: ['./search-box.component.scss']
+})
+export class SearchBoxComponent implements OnInit {
+
   searchTerm: string = '';
-  books: Array<any> = [<array of books copy pasted from server/books.json>]
+  @Output() searchFired = new EventEmitter<Search>();
 
   constructor() { }
 
-  ngOnInit() { }
-
-  ngOnChanges(changes: SimpleChanges) {
-    console.log('ngOnChanges called');
-    console.log(changes);
+  ngOnInit(): void {
   }
 
-  onChange(inputValue: string) {
-    this.searchTerm = inputValue;
+  onChange(value: string) {
+    this.searchTerm = value;
   }
 
   onSearch() {
-    this.searchSubmitted.emit({
+    this.searchFired.emit({
       searchTerm: this.searchTerm
     })
   }
+}
 ```
 
 We should have a template for it that makes use of the Angular Material themed components
@@ -96,22 +102,18 @@ import { MatButtonModule } from '@angular/material/button';
 
 The `app-root` component will become this:
 ```javascript
-import { Component } from '@angular/core';
-
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
-  title = 'ng-goodreads';
-  searchTerm: string = '';
-  books: Array<any> = {...};
+  title = "ng-goodreads";
+  searchTitle: string = "";
+  books: Array<Book> = [<extracted list of books from server/books.json>];
 
-  constructor() {}
-
-  doSearch(event: { searchTerm: string }) {
-    this.searchTerm = event.searchTerm
+  doSearch(search: Search) {
+    this.searchTitle = search.searchTerm;
   }
 }
 ```
@@ -119,7 +121,7 @@ export class AppComponent {
 In order to filter the books list we should use a `pipe` module. We can use the `@angular/cli` to generate it.
 We will generate this component in a shared folder as pipes should be reusable
 
-`npx ng g pipe shared/search`
+`npx ng g pipe shared/search-filter`
 
 The pipe should look something like this:
 
@@ -127,9 +129,9 @@ The pipe should look something like this:
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'search'
+  name: 'filterSearch'
 })
-export class SearchPipe implements PipeTransform {
+export class FilterSearchPipe implements PipeTransform {
 
   transform(items: any[], searchText: string): any[] {
     if (!items) return [];
@@ -139,16 +141,17 @@ export class SearchPipe implements PipeTransform {
       return it.originalTitle.includes(searchText);
     })
   }
-
 }
 ```
 
 We then need to import the pipe into the root component and use it in the `src/app.component.html`
 
 ```html
-  <app-search-box (searchSubmitted)="doSearch($event)"></app-search-box>
-  <ul *ngFor="let book of books | search: searchTerm">
-    <li>{{ book.originalTitle }}</li>
+  <app-search-box (searchFired)="doSearch($event)"></app-search-box>
+  <ul>
+    <li *ngFor="let book of books | filterSearch: searchTitle">
+      {{ book.originalTitle }}
+    </li>
   </ul>
 ```
 
