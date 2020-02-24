@@ -34,6 +34,7 @@ lecture we will be using angular material throughout for building our components
 ```
 
 The content of the component should look be able to manage input from the search box.
+
 ```javascript
 ...
 import { Search } from '../shared/search.model'; // we implemented a Search type for the search box
@@ -68,6 +69,7 @@ export class SearchBoxComponent implements OnInit {
 We should have a template for it that makes use of the Angular Material themed components
 In order to be able to use material components in angular the material modules need to be imported in the 
 main app module.
+
 ```javascript
 ...
 import { MatInputModule } from '@angular/material/input';

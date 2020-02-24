@@ -25,24 +25,25 @@ Create a new angular project:
 
 1) basic command
 
-`npx ng new ng-goodreads`
+    `npx ng new ng-goodreads`
 
 2) as a dry run (check out what will be created)
 
-`npx ng new ng-goodreads --dry-run`
+    `npx ng new ng-goodreads --dry-run`
 
 3) without installing the prerequisites in the project folder
 
-`npx ng new ng-goodreads --skip-install`
+    `npx ng new ng-goodreads --skip-install`
 
 4) defining custom selectors that are unique in our project for the app (we can define multiple apps in the same project)
 
-`npx ng new ng-goodreads --prefix books`
+    `npx ng new ng-goodreads --prefix books`
 
 5) 💫 NEW in Angular 8+ 💫 . Angular 8 allows you to use the last generation rendering engine **_IVY_**. It is the default in Angular 9.
 
-`npx ng new ng-goodreads --enable-ivy` - Angular 8
-`npx ng new ng-goodreads` - Angular 9
+    `npx ng new ng-goodreads --enable-ivy` - Angular 8
+
+    `npx ng new ng-goodreads` - Angular 9
 
 
 #### And of course like any command line tool it allows you to combine the options
@@ -61,21 +62,21 @@ some of the options
 
 - Mode flag
 
-`npx ng build --prod`
+    `npx ng build --prod`
 
-![dev_v_prod](./images/dev_v_prod.png)
+    ![dev_v_prod](./images/dev_v_prod.png)
 
 - optimized build - _This should be used with caution as it is 2x the time of a regular build_
 
-`npx ng build --build-omtimizer`
+    `npx ng build --build-omtimizer`
 
 - output vendor chunks (separate bundles for third party dependecies)
 
-`npx ng build --vendor-chunk`
+    `npx ng build --vendor-chunk`
 
 - for some bundle analysis you could use `--statsJson` (eg: `webpack-bundle-analyzer`)
 
-`npx ng build --statsJson`
+    `npx ng build --statsJson`
 
 
 #### 2) `npx ng serve` - runs your app in dev mode with hot reloading
