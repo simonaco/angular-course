@@ -8,6 +8,24 @@ order: 6
 
 ## Angular Components (part II)
 
+To start on this chapter you can either work on your branch or
+`git checkout 01-angular-components`
+
+⚠️  If you get an error like:
+
+```shell
+Please commit your changes or stash them before you switch branches.
+Aborting
+```
+
+run the following commands that will store your changes on the git stash
+
+`git stash --include-untracked`
+
+`git checkout 01-angular-components`
+
+
+## Let's start
 Components provide us with a way to build reusable UI interfaces. Most modern frameworks and libraries have 
 this approach to building UIs.
 In the previous chapter we started building some basic Angular features using the `@angular/cli`. This is useful 

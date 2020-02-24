@@ -6,6 +6,26 @@ order: 11
 
 <iframe src="https://docs.google.com/presentation/d/1-lfVdJXJ2NwgXoDxd-Xo3_gqvXVOJW1iHdt_E80bPMo/embed?start=false&loop=false&delayms=30000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
+
+To start on this chapter you can either work on your branch or
+`git checkout 06-forms`
+
+⚠️  If you get an error like:
+
+```shell
+Please commit your changes or stash them before you switch branches.
+Aborting
+```
+
+run the following commands that will store your changes on the git stash
+
+`git stash --include-untracked`
+
+`git checkout 06-forms`
+
+
+## Let's start
+
 We don't require to jump through any hoops to get the testing set-up. Like with most features
 the `@angular/cli` sets up pretty much everything when it creates the project so we are pretty much good.
 

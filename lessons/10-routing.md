@@ -6,6 +6,26 @@ order: 9
 
 <iframe src="https://docs.google.com/presentation/d/1S0oeGdqfWH1t5h-3kF7fG3PL4Ys3zqoDgNEk4F4Ei78/embed?start=false&loop=false&delayms=30000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
+
+To start on this chapter you can either work on your branch or
+`git checkout 04-angular-services`
+
+⚠️  If you get an error like:
+
+```shell
+Please commit your changes or stash them before you switch branches.
+Aborting
+```
+
+run the following commands that will store your changes on the git stash
+
+`git stash --include-untracked`
+
+`git checkout 04-angular-services`
+
+
+## Let's start
+
 Until now we have used a single page to display the data, but now we also want to introduce
 a form for editing (TBD), so we want to move the main page into its own component and use the
 app component as an app shell instead.

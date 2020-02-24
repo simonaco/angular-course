@@ -4,6 +4,27 @@ title: "Congratulations"
 order: 12
 ---
 
+The completed source code for the testing chapter is here:
+
+To start on this chapter you can either work on your branch or
+`git checkout 07-testing`
+
+⚠️  If you get an error like:
+
+```shell
+Please commit your changes or stash them before you switch branches.
+Aborting
+```
+
+run the following commands that will store your changes on the git stash
+
+`git stash --include-untracked`
+
+`git checkout 07-testing`
+
+
+## Let's start
+
 ## Great job on following along with the code and the exercises
 <div style="display: flex; justify-content: center">
  <img style="height: 30rem" src="./images/air_high_five.gif" />

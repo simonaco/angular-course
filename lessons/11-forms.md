@@ -8,6 +8,26 @@ order: 10
 
 # Forms
 
+
+To start on this chapter you can either work on your branch or
+`git checkout 05-routing`
+
+⚠️  If you get an error like:
+
+```shell
+Please commit your changes or stash them before you switch branches.
+Aborting
+```
+
+run the following commands that will store your changes on the git stash
+
+`git stash --include-untracked`
+
+`git checkout 05-routing`
+
+
+## Let's start
+
 We will create our first form using our trusty `@angular/cli` with the builtin schematic from `@angular/material`
 
 `npx ng g @angular/material:address-form edit`

@@ -8,6 +8,25 @@ order: 7
 
 # Services
 
+To start on this chapter you can either work on your branch or
+`git checkout 03-angular-components-book-table`
+
+⚠️  If you get an error like:
+
+```shell
+Please commit your changes or stash them before you switch branches.
+Aborting
+```
+
+run the following commands that will store your changes on the git stash
+
+`git stash --include-untracked`
+
+`git checkout 03-angular-components-book-table`
+
+
+## Let's start
+
 We want to add a service for fetching the books from the JSON server API and loading it into the `app.component`
 for display. The way we do that in angular is via the `HttpClient` from `@angular/common/http`. We need to include
 it in the app module so it's available for injecting into the components.

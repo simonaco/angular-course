@@ -8,6 +8,24 @@ order: 8
 
 ## Using schematics to streamline component creation
 
+To start on this chapter you can either work on your branch or
+`git checkout 02-angular-components-search-box`
+
+⚠️  If you get an error like:
+
+```shell
+Please commit your changes or stash them before you switch branches.
+Aborting
+```
+
+run the following commands that will store your changes on the git stash
+
+`git stash --include-untracked`
+
+`git checkout 02-angular-components-search-box`
+
+
+## Let's start
 
 In the `@angular/cli` intro we added two schematics packages: `@angular/material` & `@angular/cdk`.
 We will use these packages to make the book list look a bit more production ready and also add pagination
