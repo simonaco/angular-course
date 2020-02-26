@@ -1,6 +1,6 @@
 ---
 path: "/angular-intro-typescript"
-title: "Angular Intro"
+title: "Angular Intro TypeScript"
 order: 2
 ---
 
@@ -108,7 +108,7 @@ if (false) {
 1) complete the following code with the required types and methods on the service
     - prerequisites: install axios `npm i axios typescript`
                      copy below code into myDogs.ts
-    - hints:  you can find hints on how to define the types [here](https://medium.com/@rossbulat/advanced-typescript-by-example-api-service-manager-7ea591f5eba8)
+    - hints:  you can find an example on how to define the types [here](https://medium.com/@rossbulat/advanced-typescript-by-example-api-service-manager-7ea591f5eba8)
 
 ```typescript
 const axios = require('axios')
