@@ -27,6 +27,9 @@ Create a new angular project:
 
     `npx ng new ng-goodreads`
 
+    *_You will be presented with a wizard style prompt that will allow you to make use of the options provided. You should choose
+    to add routing and SCSS for styles and the rest on default._*
+
 2) as a dry run (check out what will be created)
 
     `npx ng new ng-goodreads --dry-run`

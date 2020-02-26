@@ -69,7 +69,7 @@ export class MyComponent {
 }
 ```
 
-2) Use type definition files so that you don't need to export the files
+2) Use type definition files so that you don't need to export the types
 
 ```typescript
 // api.model.d.ts
@@ -106,7 +106,7 @@ if (false) {
 
 ### Exercises:
 1) complete the following code with the required types and methods on the service
-    - prerequisites: install axios `npm i axios tsc`
+    - prerequisites: install axios `npm i axios typescript`
                      copy below code into myDogs.ts
     - hints:  you can find hints on how to define the types [here](https://medium.com/@rossbulat/advanced-typescript-by-example-api-service-manager-7ea591f5eba8)
 
