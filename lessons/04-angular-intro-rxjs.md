@@ -61,11 +61,12 @@ A few things to keep in mind about reactive programming
 ### Exercises:
 
 1) fetch a list of urls using RxJs Observables and operators
+    *_prerequisites: `npm i xmlhttprequest`_*
     - create a stream of observables from a list of urls
-    - use the `ajax` util from `rxjs`
     - use a transform method to capitalize all the content from the response
     - use `mergeMap` to resolve all responses
     - BONUS: can you think of other fun applications?
+      what if we used a list of breeds and list the sub species using [this endpoint](https://dog.ceo/dog-api/documentation/sub-breed)
 
 ```typescript
 const { ajax } = require('rxjs/ajax');
@@ -74,31 +75,25 @@ const { map, concatMap, mergeMap, catchError, take, retry, delay } = require('rx
 const { XMLHttpRequest } = require('xmlhttprequest')
 
 function* urlGenerator() {
-  let idx = 0
-  const urls = [<list_of_urls>];
-  while(true) {
+  const urls = ['https://dog.ceo/api/breeds/list/all'];
+  for(let idx = 0; idx < urls.length; idx++) {
     yield urls[idx];
-    idx += 1;
   }
 }
 const createXHR = () => new XMLHttpRequest()
+const getData = url => {
+  return ajax({ createXHR, url })
+}
 <SOLUTION GOES HERE>
 fetchUrl$.subscribe(data => console.log(data))
 ```
-
-<!--const getData = url => {-->
-  <!--return ajax({
-    createXHR,
-    url
-  })-->
-<!--}-->
 
 <!--const urls$ = from(urlGenerator()).pipe(take(1))-->
 
 <!--const fetchUrl$ = urls$.pipe(-->
   <!--retry(3),-->
   <!--mergeMap(url => getData(url)),-->
-  <!--map(({ response }) => response.map(book => ({ ...book, languageCode: 'meh' }))),-->
+  <!--map(Object.keys(response.message).map(puppy => puppy)),-->
   <!--catchError(error => {
     console.log('error: ', error);
     return of(error);-->
