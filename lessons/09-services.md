@@ -64,6 +64,12 @@ We want to update the npm scripts to start both the UI and the `json-server`. We
 them in paralel. In the `package.json` we want to update the scripts section to have a client and a server script for
 running them both when we run `npm start`.
 
+First install the `npm-run-all` package
+
+`npm i npm-run-all`
+
+the update `package.json`
+
 ```json
   ...
   "scripts": {
