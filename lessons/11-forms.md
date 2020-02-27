@@ -43,10 +43,11 @@ import { NotFoundComponent } from './not-found/not-found.component';
 const routes: Routes = [
   { path: "", redirectTo: "books", pathMatch: "full" },
   { path: "books", component: BooksComponent },
-  { path: "edit/:id", component: EditComponent }, // -> this is an update url with id in the url
-  { path: "edit/new", component: EditComponent }, // -> this is a create url, id is 'new'
+  { path: "edit", component: EditComponent, pathMatch: "full" },
+  { path: "edit/:id", component: EditComponent },
   { path: "**", component: NotFoundComponent }
 ];
+
 ...
 ```
 

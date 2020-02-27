@@ -80,7 +80,7 @@ We need to match the column names with the column data in the `book-table.compon
     ...
     <ng-container matColumnDef="isbn13">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>ISBN13</th>
-      <td mat-cell *matCellDef="let row">{{row.id}}</td>
+      <td mat-cell *matCellDef="let row">{{row.ISBN13}}</td>
     </ng-container>
 
     <!-- Name Column -->
@@ -159,7 +159,7 @@ also the book array needs to be wrapped in an observable stream so that it react
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
 +       case 'originalTitle': return compare(a.originalTitle, b.originalTitle, isAsc);
-        case 'id': return compare(+a.id, +b.id, isAsc);
++       case 'isbn13': return compare(a.ISBN13, b.ISBN13, isAsc);
         default: return 0;
       }
     });
