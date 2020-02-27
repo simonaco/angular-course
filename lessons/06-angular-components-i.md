@@ -81,12 +81,12 @@ The `{{}}` notation causes to render the evaluated value of the enclosed express
   <p>{{[1, 2, 3, 4]}}</p> <!-- renders 1, 2, 3, 4 -->
 ```
 
-### 2) Attribute interpolation:
+### 2) Property binding:
 
 ```typescript
 <img [src]="<some-image-url>" />
 ```
-### 3) Event interpolation:
+### 3) Event binding:
 
 ```typescript
 <input (input)="onChange($event)" />
