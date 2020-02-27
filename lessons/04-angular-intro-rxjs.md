@@ -8,49 +8,45 @@ order: 3
 
 ### RxJs is extremely powerful, and at the same time quite complicated
 
-There are a lot of applications of reactive programming that go beyond Angular. RxJs is the JavaScript reactive programming 
+There are a lot of applications of reactive programming that go beyond Angular. RxJs is the JavaScript reactive programming
 extension. It is the standard library for reactive programming in JS.
 
-RxJs is based of the observer pattern. It can be used both in NodeJS and the browser and can 
+RxJs is based of the observer pattern. It can be used both in NodeJS and the browser and can
 help you create very interesting functionalities in your UI.
 
-### Eg: Long click  handler
+Test using [stackblitz rxjs playground](https://stackblitz.com/edit/typescript-r5zrww?file=index.ts&devtoolsheight=100)
+
+### Eg: Long click handler
 
 ```javascript
-import { fromEvent, of } from 'rxjs';
-import { mergeMap, delay, takeUntil } from 'rxjs/operators';
+import { fromEvent, of } from "rxjs"
+import { mergeMap, delay, takeUntil } from "rxjs/operators"
 
-const mousedown$ = fromEvent(document, 'mousedown');
-const mouseup$ = fromEvent(document, 'mouseup');
+const mousedown$ = fromEvent(document, "mousedown")
+const mouseup$ = fromEvent(document, "mouseup")
 
 mousedown$
-  .pipe(
-    mergeMap(event =>
-      of(event).pipe(
-        delay(700),
-        takeUntil(mouseup$)
-      )
-    )
-  )
-  .subscribe(event => console.log('Long Press!', event));
+  .pipe(mergeMap(event => of(event).pipe(delay(700), takeUntil(mouseup$))))
+  .subscribe(event => console.log("Long Press!", event))
 ```
 
 ### Eg: Only trap the most recent event(is useful for managing onchange events with API requests)
 
 ```javascript
-import { fromEvent, interval } from 'rxjs';
-import { debounce } from 'rxjs/operators';
+import { fromEvent, interval } from "rxjs"
+import { debounce } from "rxjs/operators"
 
-const clicks = fromEvent(document, 'click');
-const result = clicks.pipe(debounce(() => interval(1000)));
-result.subscribe(x => console.log(x));
+const clicks = fromEvent(document, "click")
+const result = clicks.pipe(debounce(() => interval(1000)))
+result.subscribe(x => console.log(x))
 ```
 
-RxJs comes with a variety of operators, these are not all used in Angular, and learning them all 
-would be enough for another workshop however the RxJs [docs](https://rxjs-dev.firebaseapp.com/) 
+RxJs comes with a variety of operators, these are not all used in Angular, and learning them all
+would be enough for another workshop however the RxJs [docs](https://rxjs-dev.firebaseapp.com/)
 should give you a one stop shop for trying out new things with reactive programming.
 
 A few things to keep in mind about reactive programming
+
 - everything is a stream
 - operators are pure functions
 - applications are: responsive, resilient, scalable and message-driven
@@ -60,19 +56,19 @@ A few things to keep in mind about reactive programming
 
 ### Exercises:
 
-1) fetch a list of urls using RxJs Observables and operators
-    *_prerequisites: `npm i xmlhttprequest`_*
-    - create a stream of observables from a list of urls
-    - use a transform method to capitalize all the content from the response
-    - use `mergeMap` to resolve all responses
-    - BONUS: can you think of other fun applications?
-      what if we used a list of breeds and list the sub species using [this endpoint](https://dog.ceo/dog-api/documentation/sub-breed)
+1. fetch a list of urls using RxJs Observables and operators
+   _*prerequisites: `npm i xmlhttprequest`*_
+   - create a stream of observables from a list of urls
+   - use a transform method to capitalize all the content from the response
+   - use `mergeMap` to resolve all responses
+   - BONUS: can you think of other fun applications?
+     what if we used a list of breeds and list the sub species using [this endpoint](https://dog.ceo/dog-api/documentation/sub-breed)
 
 ```typescript
-const { ajax } = require('rxjs/ajax');
-const { of, from } = require('rxjs');
-const { map, concatMap, mergeMap, catchError, take, retry, delay } = require('rxjs/operators');
-const { XMLHttpRequest } = require('xmlhttprequest')
+import { fromEvent, interval, from, of } from 'rxjs';
+import { ajax } from 'rxjs/ajax'
+import { map, concatMap, mergeMap, catchError, take, retry, delay } from 'rxjs/operators';
+import {XMLHttpRequest} from 'xmlhttprequest';
 
 function* urlGenerator() {
   const urls = ['https://dog.ceo/api/breeds/list/all'];
@@ -80,9 +76,8 @@ function* urlGenerator() {
     yield urls[idx];
   }
 }
-const createXHR = () => new XMLHttpRequest()
 const getData = url => {
-  return ajax({ createXHR, url })
+  return ajax({ url })
 }
 <SOLUTION GOES HERE>
 fetchUrl$.subscribe(data => console.log(data))
@@ -99,4 +94,3 @@ fetchUrl$.subscribe(data => console.log(data))
     return of(error);-->
   <!--})-->
 <!--)-->
-
