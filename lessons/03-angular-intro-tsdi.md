@@ -1,8 +1,10 @@
 ---
 path: "/angular-intro-typescript"
-title: "Angular Intro TypeScript"
+title: "Angular Intro & TypeScript"
 order: 2
 ---
+
+<iframe src="https://docs.google.com/presentation/d/1ZkRvTG6lzR9ugkEg3-redoQJgeJdg3HRlfM9Amfb3xc/embed?start=false&loop=false&delayms=30000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 <iframe src="https://docs.google.com/presentation/d/1Zqh2Y14t4xnqqla4M1kyR4LAmseJwiP7a0109K_rp88/embed?start=false&loop=false&delayms=30000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
