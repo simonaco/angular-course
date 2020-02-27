@@ -141,7 +141,7 @@ In `src/app.component.html`:
    💡_*You could for example set the input value based on a value inside the component class*_💡
 
    💡_*Or create a list in the `src/app.component.ts` class that adds items you write in the input*_💡
-2) Create a pipe in the path `shared/search-filter` that will allow you to filter an array of strings
+2) Create a pipe in the path `shared/filter-search` that will allow you to filter an array of strings
 
 
 ### Fine print: guide on what and where to use components, directives, pipes and modules

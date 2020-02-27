@@ -141,7 +141,7 @@ export class AppComponent {
 In order to filter the books list we should use a `pipe` module. We can use the `@angular/cli` to generate it.
 We will generate this component in a shared folder as pipes should be reusable
 
-`npx ng g pipe shared/search-filter`
+`npx ng g pipe shared/filter-search`
 
 The pipe should look something like this:
 
