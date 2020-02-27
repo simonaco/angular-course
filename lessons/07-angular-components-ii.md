@@ -51,7 +51,7 @@ lecture we will be using angular material throughout for building our components
         [ ] search-box.component.ts
 ```
 
-The content of the component should look be able to manage input from the search box.
+The content of the component should be able to manage input from the search box.
 
 ```javascript
 ...
