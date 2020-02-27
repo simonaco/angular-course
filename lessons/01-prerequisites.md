@@ -20,9 +20,9 @@ In this workshop we'll learn how to build a website using Angular
 
 ## Steps
 
-Fork and star Github repository [here](https://github.com/adaschevici/angular-goodreads)
+Fork and star Github repository [here](https://github.com/adaschevici/ng-goodreads)
 
-```git clone https://github.com/<your-username>/angular-goodreads```
+```git clone https://github.com/<your-username>/ng-goodreads```
 
 Follow steps in next chapters of this guide. Happy Coding!
 
