@@ -113,4 +113,4 @@ Add a third pardy dependency on `@angular/cdk`
 
 ### Individual exercises:
 
-1) build the app generated via `npx ng build` and analyze the bundles (using webpack-bundle-analyzer)
+1) build the app generated via `npx ng build` and analyze the bundles (using [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer))
