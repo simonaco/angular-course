@@ -7,7 +7,7 @@
   A Gatsby starter to get you started creating educational materials using Markdown
 </p>
 
-## You can see the live version of the course [here](#)
+## You can see the live version of the course [here](https://trusting-wiles-ad8ef7.netlify.com)
 
 ## Get Started
 
