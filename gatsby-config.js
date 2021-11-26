@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "Staging Angular",
+    title: "Staging & PR Angular",
     subtitle: "One framework.  Mobile & desktop.",
     description:
       "Introduction to Angular workshop - presented by Simona Cotin and Artur Daschevici. Thanks Brian Holt (@holtbt) for the awesome gatsby course template.",
