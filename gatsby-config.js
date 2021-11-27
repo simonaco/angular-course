@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "'tis the season of PRs'",
+    title: "'tis the season of PRsss'",
     subtitle: "One framework.Mobile & desktop.",
     description:
       "Introduction to Angular workshop - presented by Simona Cotin and Artur Daschevici. Thanks Brian Holt (@holtbt) for the awesome gatsby course template.",
