@@ -4,7 +4,7 @@
 </p>
 
 <p align="center">
-  A Gatsby starter to get you started creating educational materials using Markdown
+  A Bla starter to get you started creating educational materials using Markdown 🙂
 </p>
 
 ## You can see the live version of the course [here](lucid-nobel-37c586.netlify.app)
