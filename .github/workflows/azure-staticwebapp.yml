@@ -34,6 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     environment: staging
+    url: ${{steps.builddeploy.outputs.static_web_app_url}}
     steps:
       - uses: actions/checkout@v2
         with:
